@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <title>Weather Forecast</title>
+  </head>
+  <body class="font-mono">
+    <!-- Top Section -->
+    <section class="bg-[url('/images/blurred.jpg')] w-dvw h-dvh bg-cover overflow-x-hidden">
+      <div
+        class="flex items-center justify-between bg-white bg-opacity-10 w-screen fixed top-0"
+      >
+        <div class="text-slate-900 mx-2 font-bold text-xl">
+          <img src="/animated/weather.svg" class="w-16" />
+        </div>
+        <div
+          class="font-bold text-xl mr-4 text-pretty text-white cursor-pointer"
+        >
+          <a href="about.html">About</a>
+        </div>
+      </div>
+
+      <div
+        id="container"
+        class="flex justify-center items-center flex-col relative"
+      >
+        <!-- Weather & Search Bar -->
+        <div
+          class="backdrop-blur-sm w-80 h-72 absolute top-28 text-white md:w-8/12 md:h-72 max-w-2xl flex justify-center rounded-xl border-2 border-stone-400"
+        >
+          <form class="absolute top-[1rem]">
+            <input
+              class="search-input w-[18rem] h-10 rounded-xl bg-white bg-opacity-50 outline-none p-4 border-2 md:w-[30rem] lg:w-[37rem] border-stone-400 placeholder-white hover:scale-105"
+              type="search"
+              placeholder="Enter city..."
+            />
+            <button
+              type="button"
+              class="search-btn absolute right-2 top-0 border-r-0 border-y-0 border-2 h-10 pl-1 text-white border-stone-400"
+            >
+              Search
+            </button>
+          </form>
+
+          <!-- weather container -->
+          <div
+            id="weather-container"
+            class="mt-16 relative right-8 w-60 flex flex-col items-start justify-evenly p-2 md:right-36 lg:right-48"
+          >
+            <span class="week text-4xl font-bold md:text-5xl tracking-wider"
+              >Monday</span
+            >
+            <span class="temp text-5xl md:text-6xl">26℃</span>
+            <span class="flex justify-between items-center text-sm md:text-xl"
+              ><p class="max-temp pr-1 text-red-600">Max: 27.2,</p>
+              <p class="min-temp text-red-600">Min: 26.1</p>
+            </span>
+          </div>
+          <!-- Image -->
+          <img
+            src="/animated/cloudy.svg"
+            class="weather-img w-28 fixed right-2 top-[5.5rem] md:w-44"
+          />
+        </div>
+        <div
+          class="w-80 h-40 absolute inset-y-[30rem] max-w-xl p-3 rounded-xl border-2 border-stone-400 bg-white bg-opacity-60 text-[#333] text-xl flex md:w-6/12 md:h-60 md:mt-10 md:inset-y-[25rem] lg:h-60 lg:mt-12"
+        >
+          <div class="w-6 flex flex-col justify-between mr-2 md:w-9 md:mr-3">
+            <img src="/images/icons8-humidity-50.png" />
+            <img src="/images/icons8-wind-50.png" />
+            <img src="/images/icons8-atmospheric-pressure-50.png" />
+            <img src="/images/icons8-visibility-50.png" />
+          </div>
+          <div class="flex flex-col justify-between md:text-xl">
+            <span class="humidity"></span>
+            <span class="wind-speed"></span>
+            <span class="pressure"></span>
+            <span class="visibility"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
